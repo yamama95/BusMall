@@ -100,6 +100,7 @@ function clickImage(e) {
     leftMallImage.remove();
     rightMallImage.remove();
     centerMallImage.remove();
+    result();
     // console.log('finished');
 
   }
@@ -119,7 +120,7 @@ function result() {
 }
 // eslint-disable-next-line no-undef
 groupImageSection.addEventListener('click', clickImage);
-result();
+
 
 //helper functions
 function randomNumber(min, max) {
