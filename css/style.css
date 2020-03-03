@@ -1,24 +1,30 @@
 body {
     background: radial-gradient(#dbffe1, #fff) fixed;
-    color: #0e2805;
+    color: #300927;
+    text-align: center;
+
   }
   h1{
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 70px ;
+    text-align: center;
+    position: sticky;
+    
   }
-  h2{
-    font-size: 18px;
+  p{
+    font-size: 22px;
     font-weight: bold;
   }
   header {
-    background: #c3f3cb;
+    background: #680935;
     width: 100%;
     padding: 17px 0;
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 9999;
+    text-align: center;
   }
   nav {
     margin: 0 auto;
@@ -33,16 +39,19 @@ body {
   }
   nav ul li a{
     text-decoration: none;
-    color: #0e2805;
+    color: #2e0826;
     font-weight: bold;
     letter-spacing: 1.4px;
-    font-size: 18px;
+    font-size: 24px;
   }
   
   main{
-    max-width: 950px;
-    margin: 40px auto;
+    width: 100%;
+    /* max-width: 950px; */
+     margin: 5px;
     overflow: hidden;
+    background-color: rgb(172, 104, 146);
+    height: 900px;
   }
   
   main > *{
@@ -69,27 +78,29 @@ body {
     line-height: 1.4;
   }
   a {
-    color: #047a22;
+    color: #a3389a;
     font-weight: bold;
     line-height: 1.4;
   }
   
   img {
-    max-height: 300px;
+    max-height: 800px;
     max-width: 100%;
     margin: 0 auto;
     cursor: pointer;
   }
   #all_images {
     text-align: center;
+    size: 1000000px;
+    float: left;
   }
   #all_images img {
-    height: 188px;
-    width: 210px;
+    height: 1000px;
+    width: 400px;
     padding: 0;
     margin: 15px 0;
     border: 1px solid #fefffe;
-    box-shadow: 2px 0 12px #043817;
+    box-shadow: 2px 0 12px #63335b;
   }
   
   li {
@@ -101,15 +112,26 @@ body {
   }
   
   body footer {
-    background: #18ad3155;
+    background: rgb(172, 104, 146);
     clear: both;
     text-align: center;
     padding: 24px 0;
-    color: #0e2805;
+    color: #ac0e97;
   }
   section div {
-    padding: 7px;
+    padding: 20px;
+    margin-left: 50px;
     box-sizing: border-box;
+    float: right;
+    width: 63%;
+  }
+  #output{
+    background-color: rgb(247, 112, 202);
+    font-size: 15px;
+    padding: 15px;
+  }
+  #all_images h1 {
+    text-align: center;
+    size: 100px;
     float: left;
-    width: 50%;
   }

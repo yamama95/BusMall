@@ -125,10 +125,11 @@ function result() {
     var liE1 = document.createElement('li');
     ulE1.appendChild(liE1);
     liE1.textContent = `${images[j].name} had ${images[j].clicks} votes and was shown ${images[j].views} times`;
-
+    setItem();
     console.log(result);
   }
 }
+
 // eslint-disable-next-line no-undef
 groupImageSection.addEventListener('click', clickImage);
 
@@ -164,7 +165,7 @@ function renderChartResults(){
       datasets: [{
         label: '# of Votes',
         data: imagesClicks,
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        backgroundColor: 'rgb(219,112,147)',
         borderColor: 'rgba(255, 99, 132, 1)',
         borderWidth: 1,
       },
@@ -172,8 +173,8 @@ function renderChartResults(){
       {
         label: '# of Views',
         data: imageViews,
-        backgroundColor:  'rgba(153, 102, 255, 0.2)',
-        borderColor: 'rgba(255, 159, 64, 0.2)',
+        backgroundColor:  'rgb(199,21,133)',
+        borderColor: 'rgba(255, 0.5, 164, 0.2)',
         borderWidth: 1,
         type : 'bar',
         labels:imagesNames,
@@ -190,3 +191,17 @@ function renderChartResults(){
     }
   });
 }
+function setItem(){
+  var storing = JSON.stringify(images);
+  localStorage.setItem( 'Allimages', storing);
+}
+
+//get all drinks
+function getItem(){
+  var translate = localStorage.getItem('Allimages');
+  if (translate ){
+    images = JSON.parse( translate);
+  }
+}
+
+
