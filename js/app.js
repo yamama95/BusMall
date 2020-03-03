@@ -54,19 +54,28 @@ function pickRandomImages() {
   rightImageRandom = images[randomNumber(0, images.length - 1)];
   centerImageRandom = images[randomNumber(0, images.length - 1)];
 
-  while (leftMallImage === rightMallImage || leftMallImage === centerMallImage || rightMallImage === centerMallImage) {
+  while (leftImageRandom === rightImageRandom || leftImageRandom === centerImageRandom || rightImageRandom ===centerImageRandom) {
     leftImageRandom = images[randomNumber(0, images.length - 1)];
     rightImageRandom = images[randomNumber(0, images.length - 1)];
     centerImageRandom = images[randomNumber(0, images.length - 1)];
-    pickRandomImages();
+
   }
+  // eslint-disable-next-line no-unused-vars
 
   leftMallImage.setAttribute('src', leftImageRandom.urlImage);
+  // eslint-disable-next-line no-undef
+
   leftMallImage.setAttribute('alt', leftImageRandom.name);
+  leftImageRandom.views++;
   rightMallImage.setAttribute('src', rightImageRandom.urlImage);
+
   rightMallImage.setAttribute('alt', rightImageRandom.name);
+  rightImageRandom.views++;
   centerMallImage.setAttribute('src', centerImageRandom.urlImage);
+
   centerMallImage.setAttribute('alt', centerImageRandom.name);
+  centerImageRandom.views++;
+
   // eslint-disable-next-line no-empty
 //   while (leftMallImage === rightMallImage || leftMallImage === centerMallImage || rightMallImage === centerMallImage) {
 //     pickRandomImages();
