@@ -42,8 +42,8 @@ var leftImageRandom , rightImageRandom , centerImageRandom ;
 // var views=0;
 
 function Image(name) {
-  this.name = name;
-  this.urlImage = `images/${this.name}`;
+  this.name = name.split('.')[0];
+  this.urlImage = `images/${name}`;
   this.clicks=0;
   this.views=0;
   images.push(this);//this its refer to the object that im created
