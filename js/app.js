@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-redeclare */
 'use strict';
 
@@ -110,6 +111,7 @@ function clickImage(e) {
     rightMallImage.remove();
     centerMallImage.remove();
     result();
+    renderChartResults();
     // console.log('finished');
 
   }
@@ -122,7 +124,7 @@ function result() {
   for (var j = 0; j < images.length; j++) {
     var liE1 = document.createElement('li');
     ulE1.appendChild(liE1);
-    liE1.textContent = `${images[j].name} had ${images[j].clicks} votes and was shown ${images[j].views} clicks`;
+    liE1.textContent = `${images[j].name} had ${images[j].clicks} votes and was shown ${images[j].views} times`;
 
     console.log(result);
   }
@@ -134,4 +136,57 @@ groupImageSection.addEventListener('click', clickImage);
 //helper functions
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+// chart
+function renderChartResults(){
+  var imagesNames = [];
+  var imagesClicks = [];
+  var imageViews=[];
+  for(var i = 0 ; i < images.length ; i++){
+    var imageName = images[i].name;
+    imagesNames.push(imageName);
+
+    var imageClick = images[i].clicks;
+    imagesClicks.push( imageClick);
+
+    var imageView = images[i].views;
+    imageViews.push(imageView);
+  }
+  console.log(imageViews);
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+
+  // eslint-disable-next-line no-undef
+  var myChart = new Chart (ctx, {
+    type: 'bar',
+    data: {
+      labels:imagesNames,
+      datasets: [{
+        label: '# of Votes',
+        data: imagesClicks,
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1,
+      },
+
+      {
+        label: '# of Views',
+        data: imageViews,
+        backgroundColor:  'rgba(153, 102, 255, 0.2)',
+        borderColor: 'rgba(255, 159, 64, 0.2)',
+        borderWidth: 1,
+        type : 'bar',
+        labels:imagesNames,
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
 }
